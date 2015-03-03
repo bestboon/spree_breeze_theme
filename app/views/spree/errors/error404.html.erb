@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <title>404</title>
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css">
+    
+    <script src="js/html5.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.carouFredSel-6.2.0-packed.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/checkbox.js"></script>
+    <script src="js/radio.js"></script>
+    <script src="js/selectBox.js"></script>
+    <script src="js/jquery.jqzoom-core.js"></script>
+
+  </head>
+  <body>
+    <div class="clear"></div>
+    
+    <section id="main" class="entire_width page-404">
+      <div class="container_12">      
+         <div id="content">
+      
+      <div class="grid_4 left_404">
+        <h1 class="text_404">404</h1>
+        <h6><%= Spree.t(:page_not_found) %></h6>
+                  </div><!-- .adress -->
+      
+      <div class="grid_8">
+        <h2><%= Spree.t(:page_not_found_whoops) %></h2>
+        <p><strong><%= Spree.t(:page_not_found_requested) %></strong></p>
+        <ul>
+          <li><%= Spree.t(:page_not_found_error1) %></li>
+          <li><%= Spree.t(:page_not_found_error2) %></li>
+        </ul>
+        <p><strong><%= Spree.t(:page_not_found_can) %></strong><br/>
+          <%= Spree.t(:page_not_found_can_message) %>
+        </p>
+        <ul>
+          <li><%= link_to Spree.t(:page_not_found_home), root_path %></li>
+        </ul>
+                  </div><!-- .grid_8 -->
+         </div><!-- #content -->
+         
+        <div class="clear"></div>
+      </div><!-- .container_12 -->
+    </section><!-- #main -->
+    
+    <div class="clear"></div>
+  </body>
+</html>
