@@ -1,0 +1,12 @@
+<% content_for :sidebar do %>
+  <%= render :partial => 'spree/shared/taxonomies' %>
+<% end %>
+
+<div id='content' class='grid_9' data-hook="homepage_products">
+  <h1 class="page_title"><%= Spree.t(:product_list) %></h1>
+    <div class="grid_product">
+      <% cache(cache_key_for_products) do %>
+        <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+      <% end %>
+    </div>
+</div>
