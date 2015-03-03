@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  hello: "Hello world"
+  spree:
+    page_not_found: "Pagina no encontrada"
+    page_not_found_whoops: "Whoops, nuestra mala..."
+    page_not_found_requested: "la página solicitada no fue encontrado , y tenemos algunas posibles razones."
+    page_not_found_error1: "Si escribió la dirección URL directamente , por favor asegúrese de que la ortografía es correcta."
+    page_not_found_error2: "Si ha hecho clic en un enlace para llegar aquí, el enlace no está actualizado."
+    page_not_found_can: "¿Qué puedes hacer?"
+    page_not_found_can_message: "Siga este enlace para volver al menu pricipal."
+    page_not_found_home: "Inicio tienda"
+    welcome_visitor: "Bienvenido visitante usted puede"
+    product_list: "Lista de Productos"
+    recently_added_item: "Articulo(s) agregados recientemente"
+    added_item: "Total de articulo(s)"

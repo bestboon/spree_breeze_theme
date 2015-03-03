@@ -3,3 +3,16 @@
 
 en:
   hello: "Hello world"
+  spree:
+    page_not_found: "Page not Found"
+    page_not_found_whoops: "Whoops, our bad..."
+    page_not_found_requested: "he page you requested was not found, and we have a fine guess why."
+    page_not_found_error1: "If you typed the URL directly, please make sure the spelling is correct."
+    page_not_found_error2: "If you clicked on a link to get here, the link is outdated."
+    page_not_found_can: "What can you do?"
+    page_not_found_can_message: "Follow these links to get you back."
+    page_not_found_home: "Store Home"
+    welcome_visitor: "Welcome visitor you can"
+    product_list: "Product List"
+    recently_added_item: "Recently added item(s)"
+    added_item: "Total item(s)"
