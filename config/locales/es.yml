@@ -16,3 +16,4 @@ es:
     product_list: "Lista de Productos"
     recently_added_item: "Articulo(s) agregados recientemente"
     added_item: "Total de articulo(s)"
+    welcome_user: "Bienvenido %{user}"
