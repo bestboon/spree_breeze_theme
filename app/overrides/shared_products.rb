@@ -1,12 +1,14 @@
 Deface::Override.new(:virtual_path => "spree/shared/_products",
                  :name => "shared_products",
-                 :replace_contents => "div#products",
+                 :replace => "div#products",
                  :text => "
 <% products.each do |product| %>
-  <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>                
+  <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %> 
+  
+  <% if li %> <li style='list-style-type: none;'> <% end %>
   <div class='grid_3 product'>
     <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
-      <img class='sale' src='images/new.png' alt='New'/>
+      <img class='sale' src='/assets/spree/images/new.png' alt='New'/>
       <div class='prev'>
          <%= link_to small_image(product, itemprop: 'image'), url, itemprop: 'url' %>
       </div><!-- .prev -->
@@ -18,11 +20,13 @@ Deface::Override.new(:virtual_path => "spree/shared/_products",
                <div class='price_old'>$725.00</div>
             </div>
          </div>
-         <a href='#' class='obn'></a>
-         <a href='#' class='like'></a>
+         <!--<a href='#' class='obn'></a>
+         <a href='#' class='like'></a>-->
          <a href='#' class='bay'></a>
+         <%= link_to '', url, class: 'obn' %>
       </div><!-- .cart -->
     <% end %>
   </div><!-- .grid_3 -->
+  <% if li%></li><%end%>
 <% end %>                                 
-                            ")
+                          ")
