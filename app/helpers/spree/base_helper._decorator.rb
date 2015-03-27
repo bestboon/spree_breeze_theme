@@ -12,7 +12,7 @@ Spree::BaseHelper.module_eval do
       css_class = nil
 
       if simple_current_order.nil? or simple_current_order.item_count.zero?
-        li = "<li class='no_border'><p>#{Spree.t(:recently_added_item)} #{simple_current_order.item_count}</p></li>"
+        li = "<li class='no_border'><p>#{Spree.t(:recently_added_item)}</p></li>"
         text = "
                 #{li}
                 <span </span> #{text}: (#{Spree.t('empty')})
