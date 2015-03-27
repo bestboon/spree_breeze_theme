@@ -1,0 +1,31 @@
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= @products
+%>
+
+<% content_for :head do %>
+  <% if paginated_products.respond_to?(:num_pages) %>
+    <%= rel_next_prev_link_tags paginated_products %>
+  <% end %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <div data-hook="taxon_sidebar_navigation">
+    <%= render partial: 'spree/shared/taxonomies' %>
+    <%= render partial: 'spree/shared/filters' if @taxon.children.empty? %>
+  </div>
+<% end %>
+
+<div id='content' class='grid_9' data-hook="homepage_products">
+  <h1 class="page_title"><%= Spree.t(:product_list) %>: <%= @taxon.name %> </h1>
+    <div class="grid_product">
+      <% cache(cache_key_for_products) do %>
+        <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :li => false } %>
+      <% end %>
+    </div>
+    <div class="clear"></div>
+    <div class="paginations">
+      <%= paginate paginated_products, theme: 'breeze' %>
+    </div>
+</div>
+
