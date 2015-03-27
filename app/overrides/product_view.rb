@@ -13,8 +13,8 @@ Deface::Override.new(:virtual_path => "spree/products/show",
               <img class="sale" src="images/sale.png" alt="Sale"/>
               <div class="preview slides_container">
                   <div class="prev_bg">
-                      <a class="jqzoom" rel="gal1" href="<%= @product.images[0].attachment.url(:large)%>">
-                          <img src="<%= @product.images[0].attachment.url(:original)%>"  style="width: 100%" title="" alt=""/>
+                      <a class="jqzoom" rel="gal1" href="<%= @product.images.count > 0 ? @product.images[0].attachment.url(:large) : \'/assets/noimage/large.png\' %>">
+                          <img src="<%= @product.images.count > 0 ? @product.images[0].attachment.url(:large) : \'/assets/noimage/large.png\' %>"  style="width: 100%" title="hola" alt="<%= @product.name %>"/>
                       </a>
                   </div>
               </div><!-- .prev -->
@@ -51,9 +51,11 @@ Deface::Override.new(:virtual_path => "spree/products/show",
 
                   <div class="block_cart">
                       <div class="cart">
+                        <% if spree_current_user %>
                           <a href="#" class="bay">Add to Cart</a>
                           <input type="text" name="" class="number" value="1" />
                           <span><%= Spree.t(:quantity) %> :</span>
+                        <% end %>
                       </div>
                       <div class="clear"></div>
                   </div><!-- .block_cart -->
@@ -101,7 +103,9 @@ Deface::Override.new(:virtual_path => "spree/products/show",
               </div><!-- .c_header -->
 
               <div class="list_carousel">
-                <%= render :partial => \'spree/shared/products\', :locals => { :products => @products.where(deleted_at: nil).limit(5), :taxon => @taxon } %>
+                  <ul id="list_product" class="list_product">
+                    <%= render :partial => \'spree/shared/products\', :locals => { :products => @products.where(deleted_at: nil).limit(4), :taxon => @taxon, :li => true } %>
+                  </ul>
               </div><!-- .list_carousel -->
           </div><!-- .carousel -->
       </div><!-- .product_page -->
